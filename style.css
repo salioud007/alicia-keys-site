@@ -1,0 +1,172 @@
+/* ===== RESET ET BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style li commenté selon instructions */
+/*
+li {
+    color: #333;
+    margin: 5px 0;
+}
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* ===== ACCESSIBILITÉ - LIEN "PASSER AU CONTENU" ===== */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  background-color: #007acc;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 15px;
+  opacity: 1;
+}
+
+/* ===== STRUCTURE PRINCIPALE ===== */
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+/* Navigation avec inline-block 80% comme demandé */
+nav {
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+/* Image dans nav seulement - largeur ~10% */
+nav img {
+  width: 130px;
+  height: auto;
+}
+
+main {
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin: 30px 0 20px 0;
+  text-align: center;
+}
+
+/* ===== GRID 2 COLONNES - COMME DEMANDÉ ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 20px;
+  margin: 20px 0 50px;
+}
+
+/* Titre sur toute la largeur de la grille */
+.grid h2 {
+  grid-column: 1 / -1;
+}
+
+/* Images dans grid seulement - width 100% */
+.grid img {
+  width: 100%;
+}
+
+/* ===== SECTION PHOTOS ===== */
+.photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0 50px;
+}
+
+/* ===== SECTION FLEX - COMME DEMANDÉ ===== */
+.flex {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 900px;
+  display: block;
+}
+
+.flex a {
+  display: inline-block;
+  margin: 15px 20px;
+}
+
+.flex img {
+  width: 90px;
+  height: 90px;
+  transition: transform 0.3s ease;
+}
+
+.flex img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== STYLES COMMUNS ===== */
+.grid figure,
+.photos-grid figure {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.grid figure:hover,
+.photos-grid figure:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .flex h2 {
+    grid-column: 1 / -1;
+  }
+}
